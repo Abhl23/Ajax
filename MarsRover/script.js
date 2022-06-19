@@ -10,15 +10,22 @@ function displayImages(data){
 }
 
 $('#get-images-button').click(function(){
-    let date=$('#date').val();
-    console.log(date);
+    $('img').remove();
+    let sol=$('#sol').val();
+    let page=$('#page').val();
+    if(sol=='' || page=='')
+        alert('Fields cannot be left empty!');
+    console.log(sol, page);
     $.ajax({
         url : `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos`,
         method : 'GET',
         success : displayImages,
         data : {
-            earth_date : date,
+            sol : sol,
+            page : page,
             api_key : 'iHqMKxzgc70eH0uh47z4wVJN0KnaH7Fsa48IIggZ'
         }
+    }).fail(function(){
+        console.log('error');
     });
 });

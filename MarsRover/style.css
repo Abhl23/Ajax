@@ -7,14 +7,8 @@
     border: 1px solid black;
 }
 
-label{
-    font-size: 1.1rem;
-    font-family: sans-serif;
-    margin-right: 2rem;
-}
-
 input{
-    width: 12rem;
+    width: 16rem;
     height: 1.6rem;
 }
 
